@@ -3,9 +3,82 @@ import { withRouter } from 'react-router-dom';
 import { InputGroup, InputGroupAddon, InputGroupText, Input, Label, FormGroup, Button, Row, Col, Grid, Form } from 'reactstrap';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import validator from 'validator';
 
 class login extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            emailError: '',
+            passwordError: ''
+        };
+
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.signin = this.signin.bind(this);
+    }
+
+    handleEmailChange(event) {
+        this.setState({ email: event.target.value });
+        this.handleEmailValidation();
+    }
+    handlePasswordChange(event) {
+        this.setState({ password: event.target.value });
+        this.handlePasswordValidation();
+    }
+    clearError() {
+        this.setState({
+            emailError: '',
+            passwordError: ''
+        })
+    }
+
+
+    handleEmailValidation() {
+        if (!validator.isEmail(this.state.email)) {
+            this.setState({ emailError: 'Email format not correct' })
+        }
+        else {
+            this.setState({emailError:''})
+        }
+    }
+
+    handlePasswordValidation() {
+        if (!validator.isLength(this.state.password, { min: 5 })) {
+            this.setState({ passwordError: 'Minimum characters is 6' });
+        }
+        else {
+            this.setState({ passwordError: '' });
+        }
+    }
+
+
+    handleValidation() {
+        var errorflag = 0;
+        if (!validator.isEmail(this.state.email)) {
+            errorflag = 1;
+            this.setState({ emailError: 'Email format not correct' })
+        }
+        if (!validator.isLength(this.state.password, { min: 6 })) {
+            errorflag = 1;
+            this.setState({ passwordError: 'Minimum characters is 6' });
+        }
+        if (errorflag == 1)
+            return false;
+        else if (errorflag == 0)
+            return true;
+    }
+    signin() {
+        this.clearError();
+        if (this.handleValidation()) {
+            console.log('hi');
+           
+        }
+
+    }
 
     render(){
         return(
@@ -21,8 +94,8 @@ class login extends Component {
                                         hintText="Email"
                                         floatingLabelText="email"
                                         fullWidth= {true}
-                                        // onChange={this.handleEmailChange}
-                                        // errorText={this.state.emailError}
+                                        onChange={this.handleEmailChange}
+                                        errorText={this.state.emailError}
                                     />
                     
                                 </FormGroup>
@@ -32,8 +105,8 @@ class login extends Component {
                                         floatingLabelText="Password"
                                         type="password"
                                         fullWidth={true}
-                                        // onChange={this.handlePasswordChange}
-                                        // errorText={this.state.passwordError}
+                                        onChange={this.handlePasswordChange}
+                                        errorText={this.state.passwordError}
 
                                     />
                                </FormGroup>
@@ -41,7 +114,7 @@ class login extends Component {
                                     type="button"
                                     label="Sign In"
                                     primary={true}
-                                    // onClick={this.signin}
+                                    onClick={this.signin}
                                 />
                             </Form>
                         </div>

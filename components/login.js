@@ -84,8 +84,8 @@ class login extends Component {
         return(
             <div className="container">
                 <Row>
-                    <Col xs="4"></Col>
-                    <Col xs="4" className="border">
+                    <Col md="4"></Col>
+                    <Col md="4" className="border">
                         <div className="text-center">
                             <h3>Sign In</h3>
                             <Form >
@@ -119,7 +119,7 @@ class login extends Component {
                             </Form>
                         </div>
                     </Col>
-                    <Col xs="4"></Col>
+                    <Col md="4"></Col>
                 </Row>
             </div>
         )

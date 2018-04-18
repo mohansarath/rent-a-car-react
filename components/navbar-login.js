@@ -38,24 +38,85 @@ export default class extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
-                          
+
+
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
-                                    Options
+                                    Dealer
                                 </DropdownToggle>
                                 <DropdownMenu right>
-                                    <DropdownItem>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>
-                                        Reset
-                                    </DropdownItem>
+                                    <Link to='/add-dealer'>
+                                        <NavLink>
+                                            <DropdownItem>
+                                                Add
+                                            </DropdownItem>
+                                        </NavLink>
+                                    </Link>
+                                    <Link to='/dashboard'>
+                                        <NavLink>
+                                            <DropdownItem>
+                                                View
+                                            </DropdownItem>
+                                        </NavLink>
+                                    </Link>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
+
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                   Cars
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <Link to='/dashboard'>
+                                        <NavLink>
+                                            <DropdownItem>
+                                                Rented
+                                            </DropdownItem>
+                                        </NavLink>
+                                    </Link>
+                                    <Link to='/dashboard'>
+                                        <NavLink>
+                                            <DropdownItem>
+                                                Available
+                                            </DropdownItem>
+                                        </NavLink>
+                                    </Link>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    Employee
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <Link to='/dashboard'>
+                                        <NavLink>
+                                            <DropdownItem>
+                                                Add
+                                            </DropdownItem>
+                                        </NavLink>
+                                    </Link>
+                                    <Link to='/dashboard'>
+                                        <NavLink>
+                                            <DropdownItem>
+                                                View
+                                            </DropdownItem>
+                                        </NavLink>
+                                    </Link>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+
+                            <Link to="/dashboard">
+                                <NavItem>
+                                    <NavLink><span className="fas fa-bookmark"></span> Report</NavLink>
+                                </NavItem>
+                            </Link>
+
+                            <Link to="/dashboard">
+                                <NavItem>
+                                    <NavLink><span className="fas fa-cog"></span> Settings</NavLink>
+                                </NavItem>
+                            </Link>
 
                             <Link to="/">
                                 <NavItem>

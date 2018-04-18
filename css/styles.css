@@ -1,0 +1,31 @@
+.navbar {
+    background-color: #2bafc8 !important;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #eefafc !important;
+}
+
+.navbar-light .navbar-brand {
+    color: #eefafc !important;
+}
+
+.exactCenter {
+    top: 50%;
+    left: 50%;
+    margin-top: 5em;
+}
+
+.border {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 20px !important;
+}
+
+.margin-top {
+    margin-top: 15px;
+}

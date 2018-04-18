@@ -1,0 +1,27 @@
+{
+  "name": "rent-a-car",
+  "version": "1.0.0",
+  "description": "Admin module of an application which manages dealers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarathmohan007/rent-a-car.git"
+  },
+  "author": "Sarath Mohan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarathmohan007/rent-a-car/issues"
+  },
+  "homepage": "https://github.com/sarathmohan007/rent-a-car#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^4.6.0",
+    "webpack-dev-server": "^3.1.3"
+  }
+}

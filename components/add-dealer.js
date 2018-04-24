@@ -5,13 +5,15 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import validator from 'validator';
 
-class addDealer extends Component {
+import { postCall } from '../services/api';
 
+class addDealer extends Component {
+  
     constructor(props) {
         super(props);
         this.state = {
             dealer_Name: '',
-            contact_Mobile: '',
+            dealer_Mobile: '',
             address: '',
             pincode: '',
             contact_Name: '',
@@ -45,7 +47,7 @@ class addDealer extends Component {
         this.handleDealerNameValidation();
     }
     handleDealerMobileChange(event) {
-        this.setState({ contact_Mobile: event.target.value });
+        this.setState({ dealer_Mobile: event.target.value });
         this.handleDealerMobileValidation();
     }
     handleDealerAddressChange(event) {
@@ -94,10 +96,10 @@ class addDealer extends Component {
     }
 
     handleDealerMobileValidation() {
-        if (!validator.isNumeric(this.state.contact_Mobile)) {
+        if (!validator.isNumeric(this.state.dealer_Mobile)) {
             this.setState({ dealerMobileError: 'Mobile should be numeric' })
         }
-        else if (!validator.isLength(this.state.contact_Mobile, { min: 9, max: 9 })) {
+        else if (!validator.isLength(this.state.dealer_Mobile, { min: 9, max: 9 })) {
             this.setState({ dealerMobileError: 'Length should be 10' })
         }
         else {
@@ -178,7 +180,7 @@ class addDealer extends Component {
             this.setState({ dealerNameError: 'Required' });
         }
 
-        if (!validator.isNumeric(this.state.contact_Mobile)) {
+        if (!validator.isNumeric(this.state.dealer_Mobile)) {
             errorflag = 1;
             this.setState({ dealerMobileError: 'Mobile should be numeric' })
         }
@@ -238,6 +240,13 @@ class addDealer extends Component {
         this.clearError();
         if (this.handleValidation()) {
             console.log('hi');
+            postCall('dealer', this.state)
+                .then((response) => {
+                    console.log('response::::::::::', response);
+                })
+                .catch((error) => {
+                    console.log('error ::::::: ', error);
+                })
 
         }
 
@@ -330,8 +339,8 @@ class addDealer extends Component {
                             </Col>
                             <Col md="6">
                                 <TextField
-                                    hintText="employee code"
-                                    floatingLabelText="Employee Code"
+                                    hintText="password"
+                                    floatingLabelText="password"
                                     fullWidth={true}
                                     onChange={this.handlepasswordChange}
                                     errorText={this.state.passwordError}

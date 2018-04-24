@@ -5,12 +5,14 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import validator from 'validator';
 
+import { postCall } from '../services/api';
+
 class login extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            username: '',
             password: '',
             emailError: '',
             passwordError: ''
@@ -22,7 +24,7 @@ class login extends Component {
     }
 
     handleEmailChange(event) {
-        this.setState({ email: event.target.value });
+        this.setState({ username: event.target.value });
         this.handleEmailValidation();
     }
     handlePasswordChange(event) {
@@ -38,11 +40,11 @@ class login extends Component {
 
 
     handleEmailValidation() {
-        if (!validator.isEmail(this.state.email)) {
-            this.setState({ emailError: 'Email format not correct' })
+        if (!validator.isEmail(this.state.username)) {
+            this.setState({ emailError: 'username format not correct' })
         }
         else {
-            this.setState({emailError:''})
+            this.setState({ emailError: '' })
         }
     }
 
@@ -58,9 +60,9 @@ class login extends Component {
 
     handleValidation() {
         var errorflag = 0;
-        if (!validator.isEmail(this.state.email)) {
+        if (!validator.isEmail(this.state.username)) {
             errorflag = 1;
-            this.setState({ emailError: 'Email format not correct' })
+            this.setState({ emailError: 'username format not correct' })
         }
         if (!validator.isLength(this.state.password, { min: 6 })) {
             errorflag = 1;
@@ -75,13 +77,29 @@ class login extends Component {
         this.clearError();
         if (this.handleValidation()) {
             console.log('hi');
-           
+            console.log(this.state);
+            postCall('login', this.state)
+                .then((response) => {
+                    console.log('response::::::::::', response);
+                    if(response.data.role === 'admin'){
+                        this.autho = response.headers["x-auth"];
+                        localStorage.setItem('Auth', this.autho);
+                        this.useremail = response.data.username;
+                        localStorage.setItem('Useremail', JSON.stringify(this.useremail))
+                        this.props.history.push({
+                            pathname: '/add-dealer'
+                        })
+                    }
+                })
+                .catch((error) => {
+                    console.log('error ::::::: ', error);
+                })
         }
 
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="container">
                 <Row>
                     <Col md="4"></Col>
@@ -91,13 +109,13 @@ class login extends Component {
                             <Form >
                                 <FormGroup>
                                     <TextField
-                                        hintText="Email"
-                                        floatingLabelText="email"
-                                        fullWidth= {true}
+                                        hintText="username"
+                                        floatingLabelText="username"
+                                        fullWidth={true}
                                         onChange={this.handleEmailChange}
                                         errorText={this.state.emailError}
                                     />
-                    
+
                                 </FormGroup>
                                 <FormGroup>
                                     <TextField
@@ -109,7 +127,7 @@ class login extends Component {
                                         errorText={this.state.passwordError}
 
                                     />
-                               </FormGroup>
+                                </FormGroup>
                                 <RaisedButton
                                     type="button"
                                     label="Sign In"

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'localhost:3000/';
+const BASE_URL = 'http://localhost:3000/';
 
 axios.interceptors.request.use((config) => {
     const auth = localStorage.getItem('Auth');

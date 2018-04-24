@@ -29,3 +29,13 @@ body {
 .margin-top {
     margin-top: 15px;
 }
+
+.margin-indicator {
+    margin-left: 25%;
+}
+
+.headings {
+    color: #888888;
+    font-weight: 500;
+    text-transform: uppercase;
+}

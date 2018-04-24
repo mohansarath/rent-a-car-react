@@ -77,7 +77,7 @@ class login extends Component {
         this.clearError();
         if (this.handleValidation()) {
             console.log('hi');
-            console.log(this.state);
+            console.log('state::::::::',this.state);
             postCall('login', this.state)
                 .then((response) => {
                     console.log('response::::::::::', response);

@@ -10,14 +10,14 @@ class addDealer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dealerName: '',
-            dealerMobile: '',
-            dealerAddress: '',
-            dealerPincode: '',
-            contactName: '',
-            contactMobile: '',
+            dealer_Name: '',
+            contact_Mobile: '',
+            address: '',
+            pincode: '',
+            contact_Name: '',
+            contact_Mobile: '',
             email: '',
-            employeeCode: '',
+            password: '',
             dealerNameError: '',
             dealerMobileError: '',
             dealerAddressError: '',
@@ -25,7 +25,7 @@ class addDealer extends Component {
             contactNameError: '',
             contactMobileError: '',
             emailError: '',
-            employeeCodeError: ''
+            passwordError: ''
         };
 
 
@@ -35,37 +35,37 @@ class addDealer extends Component {
         this.handleDealerPincodeChange = this.handleDealerPincodeChange.bind(this);
         this.handleContactNameChange = this.handleContactNameChange.bind(this);
         this.handleContactMobileChange = this.handleContactMobileChange.bind(this);
-        this.handleEmployeeCodeChange = this.handleEmployeeCodeChange.bind(this);
+        this.handlepasswordChange = this.handlepasswordChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.add = this.add.bind(this);
     }
 
     handleDealerNameChange(event) {
-        this.setState({ dealerName: event.target.value });
+        this.setState({ dealer_Name: event.target.value });
         this.handleDealerNameValidation();
     }
     handleDealerMobileChange(event) {
-        this.setState({ dealerMobile: event.target.value });
+        this.setState({ contact_Mobile: event.target.value });
         this.handleDealerMobileValidation();
     }
     handleDealerAddressChange(event) {
-        this.setState({ dealerAddress: event.target.value });
+        this.setState({ address: event.target.value });
         this.handleDealerAddressValidation();
     }
     handleDealerPincodeChange(event) {
-        this.setState({ dealerPincode: event.target.value });
+        this.setState({ pincode: event.target.value });
         this.handleDealerPincodeValidation();
     }
     handleContactMobileChange(event) {
-        this.setState({ contactMobile: event.target.value });
+        this.setState({ contact_Mobile: event.target.value });
         this.handleContactMobileValidation();
     }
-    handleEmployeeCodeChange(event) {
-        this.setState({ employeeCode: event.target.value });
-        this.handleEmployeeCodeValidation();
+    handlepasswordChange(event) {
+        this.setState({ password: event.target.value });
+        this.handlepasswordValidation();
     }
     handleContactNameChange(event) {
-        this.setState({ contactName: event.target.value });
+        this.setState({ contact_Name: event.target.value });
         this.handleContactNameValidation();
     }
     handleEmailChange(event) {
@@ -81,12 +81,12 @@ class addDealer extends Component {
             contactNameError: '',
             contactMobileError: '',
             emailError: '',
-            employeeCodeError: ''
+            passwordError: ''
         })
     }
 
     handleDealerNameValidation() {
-        if (!validator.isLength(this.state.dealerName, { min: 0 })) {
+        if (!validator.isLength(this.state.dealer_Name, { min: 0 })) {
             this.setState({ dealerNameError: 'Required' });
         } else {
             this.setState({ dealerNameError: '' });
@@ -94,10 +94,10 @@ class addDealer extends Component {
     }
 
     handleDealerMobileValidation() {
-        if (!validator.isNumeric(this.state.dealerMobile)) {
+        if (!validator.isNumeric(this.state.contact_Mobile)) {
             this.setState({ dealerMobileError: 'Mobile should be numeric' })
         }
-        else if (!validator.isLength(this.state.dealerMobile, { min: 9, max: 9 })) {
+        else if (!validator.isLength(this.state.contact_Mobile, { min: 9, max: 9 })) {
             this.setState({ dealerMobileError: 'Length should be 10' })
         }
         else {
@@ -106,7 +106,7 @@ class addDealer extends Component {
     }
 
     handleDealerAddressValidation() {
-        if (!validator.isLength(this.state.dealerAddress, { min: 0 })) {
+        if (!validator.isLength(this.state.address, { min: 0 })) {
             this.setState({ dealerAddressError: 'Required' });
         } else {
             this.setState({ dealerAddressError: '' });
@@ -115,11 +115,11 @@ class addDealer extends Component {
     }
 
     handleDealerPincodeValidation() {
-        if (!validator.isLength(this.state.dealerPincode, { min: 0 })) {
+        if (!validator.isLength(this.state.pincode, { min: 0 })) {
             this.setState({ dealerPincodeError: 'Required' });
         }
 
-        else if (!validator.isNumeric(this.state.dealerPincode)) {
+        else if (!validator.isNumeric(this.state.pincode)) {
             this.setState({ dealerPincodeError: 'Pin should be numeric' })
 
         }
@@ -129,7 +129,7 @@ class addDealer extends Component {
     }
 
     handleContactNameValidation() {
-        if (!validator.isLength(this.state.contactName, { min: 0 })) {
+        if (!validator.isLength(this.state.contact_Name, { min: 0 })) {
             this.setState({ contactNameError: 'Required' });
         } else {
             this.setState({ contactNameError: '' });
@@ -137,11 +137,11 @@ class addDealer extends Component {
     }
 
     handleContactMobileValidation() {
-        if (!validator.isNumeric(this.state.contactMobile)) {
+        if (!validator.isNumeric(this.state.contact_Mobile)) {
             this.setState({ contactMobileError: 'Mobile should be numeric' })
 
         }
-        else if (!validator.isLength(this.state.contactMobile, { min: 9, max: 9 })) {
+        else if (!validator.isLength(this.state.contact_Mobile, { min: 9, max: 9 })) {
             this.setState({ contactMobileError: 'Length should be 10' })
         } else {
             this.setState({ contactMobileError: '' })
@@ -149,11 +149,11 @@ class addDealer extends Component {
         }
     }
 
-    handleEmployeeCodeValidation() {
-        if (!validator.isLength(this.state.employeeCode, { min: 0 })) {
-            this.setState({ employeeCodeError: 'Required' });
+    handlepasswordValidation() {
+        if (!validator.isLength(this.state.password, { min: 0 })) {
+            this.setState({ passwordError: 'Required' });
         } else {
-            this.setState({ employeeCodeError: '' });
+            this.setState({ passwordError: '' });
         }
 
     }
@@ -173,47 +173,47 @@ class addDealer extends Component {
     handleValidation() {
         var errorflag = 0;
 
-        if (!validator.isLength(this.state.dealerName, { min: 1 })) {
+        if (!validator.isLength(this.state.dealer_Name, { min: 1 })) {
             errorflag = 1;
             this.setState({ dealerNameError: 'Required' });
         }
 
-        if (!validator.isNumeric(this.state.dealerMobile)) {
+        if (!validator.isNumeric(this.state.contact_Mobile)) {
             errorflag = 1;
             this.setState({ dealerMobileError: 'Mobile should be numeric' })
         }
 
-        if (!validator.isLength(this.state.dealerMobile, { min: 10, max: 10 })) {
+        if (!validator.isLength(this.state.contact_Mobile, { min: 10, max: 10 })) {
             errorflag = 1;
             this.setState({ dealerMobileError: 'Length should be 10' })
         }
 
-        if (!validator.isLength(this.state.dealerAddress, { min: 1 })) {
+        if (!validator.isLength(this.state.address, { min: 1 })) {
             errorflag = 1;
             this.setState({ dealerAddressError: 'Required' });
         }
 
-        if (!validator.isLength(this.state.dealerPincode, { min: 1 })) {
+        if (!validator.isLength(this.state.pincode, { min: 1 })) {
             errorflag = 1;
             this.setState({ dealerPincodeError: 'Required' });
         }
 
-        if (!validator.isNumeric(this.state.dealerPincode)) {
+        if (!validator.isNumeric(this.state.pincode)) {
             errorflag = 1;
             this.setState({ dealerPincodeError: 'Pin should be numeric' })
         }
 
-        if (!validator.isLength(this.state.contactName, { min: 1 })) {
+        if (!validator.isLength(this.state.contact_Name, { min: 1 })) {
             errorflag = 1;
             this.setState({ contactNameError: 'Required' });
         }
 
-        if (!validator.isNumeric(this.state.contactMobile)) {
+        if (!validator.isNumeric(this.state.contact_Mobile)) {
             errorflag = 1;
             this.setState({ contactMobileError: 'Mobile should be numeric' })
         }
 
-        if (!validator.isLength(this.state.contactMobile, { min: 10, max: 10 })) {
+        if (!validator.isLength(this.state.contact_Mobile, { min: 10, max: 10 })) {
             errorflag = 1;
             this.setState({ contactMobileError: 'Length should be 10' })
         }
@@ -223,9 +223,9 @@ class addDealer extends Component {
             this.setState({ emailError: 'Email format not correct' })
         }
 
-        if (!validator.isLength(this.state.employeeCode, { min: 1 })) {
+        if (!validator.isLength(this.state.password, { min: 1 })) {
             errorflag = 1;
-            this.setState({ employeeCodeError: 'Required' });
+            this.setState({ passwordError: 'Required' });
         }
 
         if (errorflag == 1)
@@ -333,8 +333,8 @@ class addDealer extends Component {
                                     hintText="employee code"
                                     floatingLabelText="Employee Code"
                                     fullWidth={true}
-                                    onChange={this.handleEmployeeCodeChange}
-                                    errorText={this.state.employeeCodeError}
+                                    onChange={this.handlepasswordChange}
+                                    errorText={this.state.passwordError}
                                 />
                             </Col>
                         </Row>

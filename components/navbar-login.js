@@ -52,7 +52,7 @@ export default class extends Component {
                                             </DropdownItem>
                                         </NavLink>
                                     </Link>
-                                    <Link to='/dashboard'>
+                                    <Link to='/view-dealer'>
                                         <NavLink>
                                             <DropdownItem>
                                                 View

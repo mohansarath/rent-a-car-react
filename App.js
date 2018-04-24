@@ -6,6 +6,7 @@ import Home from './pages/home-page';
 import Login from './pages/login-page';
 import Dashboard from './pages/admin-dashboard-page';
 import AddDealer from './pages/add-dealer-page';
+import ViewDealer from './pages/view-dealer-page';
 
 export default class App extends Component {
 
@@ -31,6 +32,11 @@ export default class App extends Component {
                             path='/add-dealer'
                             component={AddDealer}
                         />
+                        <Route
+                            path='/view-dealer'
+                            component={ViewDealer}
+                        />
+
                     </div>
                 </BrowserRouter>
             </MuiThemeProvider>

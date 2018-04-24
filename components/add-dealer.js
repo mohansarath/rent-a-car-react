@@ -87,6 +87,8 @@ class addDealer extends Component {
         })
     }
 
+    
+
     handleDealerNameValidation() {
         if (!validator.isLength(this.state.dealer_Name, { min: 0 })) {
             this.setState({ dealerNameError: 'Required' });
@@ -243,6 +245,10 @@ class addDealer extends Component {
             postCall('dealer', this.state)
                 .then((response) => {
                     console.log('response::::::::::', response);
+                    if(response.status=== 200) {
+                        alert(`Dealer created: ${response.data.username}`);
+                        this.props.history.push('/view-dealer');
+                    }
                 })
                 .catch((error) => {
                     console.log('error ::::::: ', error);

@@ -201,7 +201,6 @@ class addDealer extends Component {
         if (!validator.isNumeric(this.state.dealerPincode)) {
             errorflag = 1;
             this.setState({ dealerPincodeError: 'Pin should be numeric' })
-
         }
 
         if (!validator.isLength(this.state.contactName, { min: 1 })) {
@@ -212,8 +211,8 @@ class addDealer extends Component {
         if (!validator.isNumeric(this.state.contactMobile)) {
             errorflag = 1;
             this.setState({ contactMobileError: 'Mobile should be numeric' })
-
         }
+
         if (!validator.isLength(this.state.contactMobile, { min: 10, max: 10 })) {
             errorflag = 1;
             this.setState({ contactMobileError: 'Length should be 10' })
@@ -234,6 +233,7 @@ class addDealer extends Component {
         else if (errorflag == 0)
             return true;
     }
+    
     add() {
         this.clearError();
         if (this.handleValidation()) {

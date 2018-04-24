@@ -67,14 +67,14 @@ export default class extends Component {
                                    Cars
                                 </DropdownToggle>
                                 <DropdownMenu right>
-                                    <Link to='/dashboard'>
+                                    <Link to='/rented-car'>
                                         <NavLink>
                                             <DropdownItem>
                                                 Rented
                                             </DropdownItem>
                                         </NavLink>
                                     </Link>
-                                    <Link to='/dashboard'>
+                                    <Link to='/available-car'>
                                         <NavLink>
                                             <DropdownItem>
                                                 Available

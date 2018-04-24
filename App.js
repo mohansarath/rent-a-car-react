@@ -7,6 +7,8 @@ import Login from './pages/login-page';
 import Dashboard from './pages/admin-dashboard-page';
 import AddDealer from './pages/add-dealer-page';
 import ViewDealer from './pages/view-dealer-page';
+import RentedCars from './pages/rented-cars';
+import AvailableCars from './pages/available-cars';
 
 export default class App extends Component {
 
@@ -35,6 +37,14 @@ export default class App extends Component {
                         <Route
                             path='/view-dealer'
                             component={ViewDealer}
+                        />
+                        <Route
+                            path='/rented-car'
+                            component={RentedCars}
+                        />
+                        <Route
+                            path='/available-car'
+                            component={AvailableCars}
                         />
 
                     </div>

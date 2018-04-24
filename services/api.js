@@ -5,13 +5,10 @@ const BASE_URL = 'localhost:3000/';
 axios.interceptors.request.use((config) => {
     const auth = localStorage.getItem('Auth');
     if (auth) {
-        // let authToken = 'Bearer ' + userDetails.user_token;
-        config.headers['Auth'] = auth;
-        // setHeader(config);
+        config.headers['x-auth'] = auth;
         return config;
     }
     else {
-        // setHeader(config);
         return config;
     }
 });

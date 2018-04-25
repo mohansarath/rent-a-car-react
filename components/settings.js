@@ -6,6 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import validator from 'validator';
 
 import { postCall } from '../services/api';
+import { putCall } from '../services/api';
 
 class settings extends Component {
 
@@ -60,7 +61,16 @@ class settings extends Component {
     add() {
         this.clearError();
         if (this.handleValidation()) {
-            console.log('hi');
+            const settings_id = localStorage.getItem('Settings_ID');
+            putCall(`settings/${settings_id}`, this.state)
+                .then((response) => {
+                    console.log('response ::::::::', response.data);
+                    window.location.reload()
+                })
+                .catch((error) => {
+
+                    console.log('error:::::::', error);
+                })
 
         }
     }

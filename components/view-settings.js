@@ -34,7 +34,8 @@ export default class extends Component {
     getSettings() {
         getCall('settings')
             .then((response) => {
-                console.log('response ::::::::', response.data[0].commission);
+                console.log('response ::::::::', response.data[0]._id);
+                localStorage.setItem('Settings_ID', response.data[0]._id);
                 this.setState({ data: response.data[0].commission, loading: false });
             })
             .catch((error) => {

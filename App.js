@@ -9,6 +9,7 @@ import AddDealer from './pages/add-dealer-page';
 import ViewDealer from './pages/view-dealer-page';
 import RentedCars from './pages/rented-cars';
 import AvailableCars from './pages/available-cars';
+import Settings from './pages/settings-page';
 
 export default class App extends Component {
 
@@ -45,6 +46,10 @@ export default class App extends Component {
                         <Route
                             path='/available-car'
                             component={AvailableCars}
+                        />
+                        <Route
+                            path='/settings'
+                            component={Settings}
                         />
 
                     </div>

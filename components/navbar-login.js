@@ -112,7 +112,7 @@ export default class extends Component {
                                 </NavItem>
                             </Link>
 
-                            <Link to="/dashboard">
+                            <Link to="/settings">
                                 <NavItem>
                                     <NavLink><span className="fas fa-cog"></span> Settings</NavLink>
                                 </NavItem>

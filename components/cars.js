@@ -25,6 +25,10 @@ class Dealer extends Component {
                                 </CardActions> */}
                                 <CardText expandable={true}>
                                     <Row className="margin-top">
+                                        <Col sm="6" className="headings">Dealer</Col>
+                                        <Col sm="6">{item.Dealer_ID[0].contact_Name}</Col>
+                                    </Row>
+                                    <Row className="margin-top">
                                         <Col sm="6" className="headings">price</Col>
                                         <Col sm="6">{item.features[0].price}</Col>
                                     </Row>

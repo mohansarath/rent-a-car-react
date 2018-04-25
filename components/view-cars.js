@@ -37,7 +37,8 @@ class viewDealer extends Component {
         getCall(this.props.url)
             .then((response) => {
                 console.log('response ::::::::', response.data);
-                this.setState({ data: response.data.car, loading: false });
+                this.setState({ data: response.data, loading: false });
+                console.log('state data:::::::',this.state.data);
             })
             .catch((error) => {
 

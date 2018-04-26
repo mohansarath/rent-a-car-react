@@ -89,7 +89,7 @@ export default class extends Component {
                                     Employee
                                 </DropdownToggle>
                                 <DropdownMenu right>
-                                    <Link to='/dashboard'>
+                                    <Link to='/add-employee'>
                                         <NavLink>
                                             <DropdownItem>
                                                 Add

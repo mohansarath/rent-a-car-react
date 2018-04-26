@@ -10,6 +10,7 @@ import ViewDealer from './pages/view-dealer-page';
 import RentedCars from './pages/rented-cars';
 import AvailableCars from './pages/available-cars';
 import Settings from './pages/settings-page';
+import AddEmployee from './pages/add-employee-page'
 
 export default class App extends Component {
 
@@ -50,6 +51,10 @@ export default class App extends Component {
                         <Route
                             path='/settings'
                             component={Settings}
+                        />
+                        <Route
+                            path='/add-employee'
+                            component={AddEmployee}
                         />
 
                     </div>

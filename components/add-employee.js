@@ -340,7 +340,18 @@ class addEmployee extends Component {
         this.clearError();
         if (this.handleValidation()) {
             console.log('hi');
-           
+            postCall('employee', this.state)
+                .then((response) => {
+                    console.log('response::::::::::', response);
+                    if (response.status === 200) {
+                        alert(`Employee created: ${response.data.name}`);
+                        this.props.history.push('/view-employee');
+                    }
+                })
+                .catch((error) => {
+                    console.log('error ::::::: ', error);
+                })
+
         }
     }
 

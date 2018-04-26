@@ -11,6 +11,7 @@ import RentedCars from './pages/rented-cars';
 import AvailableCars from './pages/available-cars';
 import Settings from './pages/settings-page';
 import AddEmployee from './pages/add-employee-page'
+import ViewEmployee from './pages/view-employee-page';
 
 export default class App extends Component {
 
@@ -55,6 +56,10 @@ export default class App extends Component {
                         <Route
                             path='/add-employee'
                             component={AddEmployee}
+                        />
+                        <Route
+                            path='/view-employee'
+                            component={ViewEmployee}
                         />
 
                     </div>

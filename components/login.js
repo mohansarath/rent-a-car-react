@@ -77,22 +77,33 @@ class login extends Component {
         this.clearError();
         if (this.handleValidation()) {
             console.log('hi');
-            console.log('state::::::::',this.state);
+            console.log('state::::::::', this.state);
             postCall('login', this.state)
                 .then((response) => {
-                    console.log('response::::::::::', response);
-                    if(response.data.role === 'admin'){
-                        this.autho = response.headers["x-auth"];
-                        localStorage.setItem('Auth', this.autho);
-                        this.useremail = response.data.username;
-                        localStorage.setItem('Useremail', JSON.stringify(this.useremail))
-                        this.props.history.push({
-                            pathname: '/add-dealer'
-                        })
+                    console.log('response::::::::::', response.data);
+                    if (response.status === 200) {
+                        if (response.data.role === 'admin') {
+                            this.autho = response.headers["x-auth"];
+                            localStorage.setItem('Auth', this.autho);
+                            this.useremail = response.data.username;
+                            localStorage.setItem('Useremail', JSON.stringify(this.useremail))
+                            this.props.history.push({
+                                pathname: '/add-dealer'
+                            })
+                        }
                     }
+                    if (response.data == 'username doesnot exist') {
+                        console.log('in else if');
+                        this.setState({ emailError: 'username doesnot exist' })
+                    }
+                     if (response.data == 'wrong password') {
+                        this.setState({ passwordError: 'wrong password' });
+                    }
+
                 })
                 .catch((error) => {
                     console.log('error ::::::: ', error);
+                  
                 })
         }
 

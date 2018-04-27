@@ -252,6 +252,9 @@ class addDealer extends Component {
                 })
                 .catch((error) => {
                     console.log('error ::::::: ', error);
+                    if (error.response.data.code == 11000) {
+                        this.setState({ emailError: 'email already exists' })
+                    }
                 })
 
         }

@@ -349,7 +349,11 @@ class addEmployee extends Component {
                     }
                 })
                 .catch((error) => {
-                    console.log('error ::::::: ', error);
+                    console.log('we have error',error.response.data.code);
+                    if (error.response.data.code == 11000){
+                        this.setState({ emailError: 'email already exists' })
+                    }
+                    // console.log('error ::::::: ', response);
                 })
 
         }

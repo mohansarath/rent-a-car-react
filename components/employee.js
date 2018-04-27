@@ -10,6 +10,7 @@ class Employee extends Component {
         return (
             <div className="container">
                 <Row>
+              
                     {this.props.data.map((item) =>
                         <Col sm="4" md="4">
                             <Card className="margin-top">

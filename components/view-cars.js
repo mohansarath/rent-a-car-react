@@ -143,6 +143,7 @@ class viewDealer extends Component {
                     </Col>
                     <Col md="7"></Col>
                 </Row>
+                <h6>Cars</h6>
                 <Car data={this.state.data} />
             </div>
         )

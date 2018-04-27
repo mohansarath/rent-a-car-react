@@ -12,9 +12,9 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-export default class extends Component {
+export  class NavbarClass extends Component {
     constructor(props) {
         super(props);
 
@@ -29,6 +29,11 @@ export default class extends Component {
         });
     }
     render() {
+        const auth = localStorage.getItem('Auth');
+        if (!auth) {
+            this.props.history.push('/login');
+        }
+
         return (
             <div>
                 <Navbar color="light" light expand="md">
@@ -118,7 +123,7 @@ export default class extends Component {
                                 </NavItem>
                             </Link>
 
-                            <Link to="/">
+                            <Link to="/login">
                                 <NavItem>
                                     <NavLink><span className="fa fa-sign-in-alt"></span> Log Out</NavLink>
                                 </NavItem>
@@ -130,3 +135,4 @@ export default class extends Component {
         );
     }
 }
+export default withRouter(NavbarClass);

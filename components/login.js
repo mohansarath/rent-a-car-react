@@ -23,6 +23,11 @@ class login extends Component {
         this.signin = this.signin.bind(this);
     }
 
+
+    componentDidMount() {
+        localStorage.clear();
+    }
+
     handleEmailChange(event) {
         this.setState({ username: event.target.value });
         this.handleEmailValidation();

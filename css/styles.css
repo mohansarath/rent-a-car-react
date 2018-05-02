@@ -56,5 +56,22 @@ body {
     margin-left: 0;
     background: none;
     border: none;
-    width:100%;
+    width: 100%;
+}
+
+.green {
+    background-color: #38bd9b !important;
+    color: white !important;
+}
+
+.white {
+    color: white !important;
+}
+
+.violet {
+    background-color: #7166ba !important;
+}
+
+.blue {
+    background-color: #5c9cec !important;
 }

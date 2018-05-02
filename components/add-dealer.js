@@ -280,7 +280,6 @@ class addDealer extends Component {
                                     onChange={this.handleDealerNameChange}
                                     errorText={this.state.dealerNameError}
                                 />
-
                             </Col>
                             <Col md="6">
                                 <TextField

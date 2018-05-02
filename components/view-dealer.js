@@ -17,8 +17,6 @@ const style = {
 
 class viewDealer extends Component {
 
-
-
     constructor() {
         super();
         this.state = {

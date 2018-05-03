@@ -137,7 +137,7 @@ viewEmployeeDealer(){
                     </Col>
                     <Col md="7"></Col>
                 </Row>
-                <h6>Employee</h6>
+                {/* <h6>Employee</h6> */}
                 <Employee data={this.state.data} />
             </div>
         )

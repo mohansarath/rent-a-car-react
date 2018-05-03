@@ -30,6 +30,10 @@ body {
     margin-top: 15px;
 }
 
+.margin-left {
+    padding-left: 15%;
+}
+
 .margin-indicator {
     margin-left: 25%;
 }
@@ -75,4 +79,3 @@ body {
 .blue {
     background-color: #5c9cec !important;
 }
-

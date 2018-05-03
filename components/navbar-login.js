@@ -37,7 +37,7 @@ export  class NavbarClass extends Component {
         return (
             <div>
                 <Navbar color="light" light expand="md">
-                    <Link to="/">
+                    <Link to="/dashboard">
                         <NavbarBrand>Rent A Car</NavbarBrand>
                     </Link>
                     <NavbarToggler onClick={this.toggle} />
@@ -45,7 +45,7 @@ export  class NavbarClass extends Component {
                         <Nav className="ml-auto" navbar>
 
 
-                            <UncontrolledDropdown nav inNavbar>
+                            {/* <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
                                     Dealer
                                 </DropdownToggle>
@@ -121,7 +121,7 @@ export  class NavbarClass extends Component {
                                 <NavItem>
                                     <NavLink><span className="fas fa-cog"></span> Settings</NavLink>
                                 </NavItem>
-                            </Link>
+                            </Link> */}
 
                             <Link to="/login">
                                 <NavItem>

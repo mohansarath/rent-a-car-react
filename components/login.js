@@ -93,7 +93,7 @@ class login extends Component {
                             this.useremail = response.data.username;
                             localStorage.setItem('Useremail', JSON.stringify(this.useremail))
                             this.props.history.push({
-                                pathname: '/add-dealer'
+                                pathname: '/dashboard'
                             })
                         }
                     }

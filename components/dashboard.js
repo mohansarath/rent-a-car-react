@@ -20,8 +20,11 @@ const data = [
     { name: 'Sep', amount: 3000, amt: 2210 },
     { name: 'Oct', amount: 10025, amt: 2290 },
     { name: 'Nov', amount: 2780, amt: 2000 },
-    { name: 'Dec', amount: 9956, amt: 2181 }
+    { name: 'Dec', amount: 9956, amt: 2181 },
 ];
+const style = {
+    color: 'white'
+}
 
 class dashboard extends Component {
 
@@ -31,18 +34,18 @@ class dashboard extends Component {
             <div className="container">
                 <Row>
                     <Col md="4">
-                        <Card className="green">
-                            <CardTitle title="Dealers" subtitle="20" />
+                        <Card className="green" >
+                            <CardTitle title="Dealers" subtitle="20" style={style} />
                         </Card>
                     </Col>
                     <Col md="4">
-                        <Card className="violet">
-                            <CardTitle title="Revenue" subtitle="1,250,000 $" />
+                        <Card className="violet" >
+                            <CardTitle title="Revenue" subtitle="1,250,000 $" style={style}/>
                         </Card>
                     </Col>
                     <Col md="4">
-                        <Card className="blue">
-                            <CardTitle title="Cars" subtitle="1000" />
+                        <Card className="blue" >
+                            <CardTitle title="Cars" subtitle="1000" style={style}/>
                         </Card>
                     </Col>
                 </Row>

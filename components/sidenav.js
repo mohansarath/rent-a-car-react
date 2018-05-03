@@ -11,9 +11,13 @@ import ContentDrafts from 'material-ui/svg-icons/content/drafts';
 import ContentSend from 'material-ui/svg-icons/content/send';
 import Subheader from 'material-ui/Subheader';
 import { List, ListItem } from 'material-ui/List';
+import Avatar from 'material-ui/Avatar';
 
-const style={
-    color:'white'
+const style = {
+    color: 'white'
+}
+const margin = {
+    marginTop: '10px'
 }
 
 export class SidenavClass extends Component {
@@ -117,11 +121,23 @@ export class SidenavClass extends Component {
                         <NavIcon><span className="fas fa-cog"></span> </NavIcon>
                             <NavText ><NavLink tag={Link} to="/settings"> Settings</NavLink> </NavText>
                     </Nav>   */}
-
-
+                    <center>
+                        <Avatar
+                            size={100}
+                            style={margin}
+                        >
+                            A
+                        </Avatar>
+                    </center>
                     <List className="white">
-                        <Link to='/dashboard'>   <ListItem primaryText="Dashboard" style={style} leftIcon={<span className="fas fa-columns"></span>} /> </Link>
-                       
+                        <Link to='/dashboard'>
+                            <ListItem
+                                primaryText="Dashboard"
+                                style={style}
+                                leftIcon={<span className="fas fa-columns"></span>}
+                            />
+                        </Link>
+
                         <ListItem
                             primaryText="Dealer"
                             initiallyOpen={false}
@@ -129,18 +145,22 @@ export class SidenavClass extends Component {
                             style={style}
                             leftIcon={<span className="fas fa-briefcase"></span>}
                             nestedItems={[
-                                <Link to='/add-dealer'>     <ListItem
-                                    key={1}
-                                    primaryText="Add"
-                                    style={style}
-                                    leftIcon={<span className="fas fa-plus-square"></span>}
-                                /></Link>,
-                                <Link to='/view-dealer'><ListItem
-                                    key={2}
-                                    primaryText="View"
-                                    style={style}
-                                    leftIcon={<span className="fas fa-eye"></span>}
-                                /></Link>
+                                <Link to='/add-dealer'>
+                                    <ListItem
+                                        key={1}
+                                        primaryText="Add"
+                                        style={style}
+                                        leftIcon={<span className="fas fa-plus-square"></span>}
+                                    />
+                                </Link>,
+                                <Link to='/view-dealer'>
+                                    <ListItem
+                                        key={2}
+                                        primaryText="View"
+                                        style={style}
+                                        leftIcon={<span className="fas fa-eye"></span>}
+                                    />
+                                </Link>
                             ]}
                         />
                         <ListItem
@@ -150,18 +170,22 @@ export class SidenavClass extends Component {
                             style={style}
                             leftIcon={<span className="fas fa-users"></span>}
                             nestedItems={[
-                                <Link to='/add-employee'>   <ListItem
-                                    key={1}
-                                    primaryText="Add"
-                                    style={style}
-                                    leftIcon={<span className="fas fa-plus-square"></span>}
-                                /></Link>,
-                                <Link to='/view-employee'> <ListItem
-                                    key={2}
-                                    primaryText="View"
-                                    style={style}
-                                    leftIcon={<span className="fas fa-eye"></span>}
-                                /></Link>
+                                <Link to='/add-employee'>
+                                    <ListItem
+                                        key={1}
+                                        primaryText="Add"
+                                        style={style}
+                                        leftIcon={<span className="fas fa-plus-square"></span>}
+                                    />
+                                </Link>,
+                                <Link to='/view-employee'>
+                                    <ListItem
+                                        key={2}
+                                        primaryText="View"
+                                        style={style}
+                                        leftIcon={<span className="fas fa-eye"></span>}
+                                    />
+                                </Link>
                             ]}
                         />
                         <ListItem
@@ -171,21 +195,31 @@ export class SidenavClass extends Component {
                             style={style}
                             leftIcon={<span className="fas fa-car"></span>}
                             nestedItems={[
-                                <Link to='/rented-car'>  <ListItem
-                                    key={1}
-                                    primaryText="Rented"
-                                    leftIcon={<span className="fas fa-undo"></span>}
-                                    style={style}
-                                /></Link>,
-                               <Link to='/available-car'>    <ListItem
-                                    key={2}
-                                    primaryText="Available"
-                                   leftIcon={<span className="fas fa-redo"></span>}
-                                   style={style}
-                               /></Link>
+                                <Link to='/rented-car'>
+                                    <ListItem
+                                        key={1}
+                                        primaryText="Rented"
+                                        leftIcon={<span className="fas fa-undo"></span>}
+                                        style={style}
+                                    />
+                                </Link>,
+                                <Link to='/available-car'>
+                                    <ListItem
+                                        key={2}
+                                        primaryText="Available"
+                                        leftIcon={<span className="fas fa-redo"></span>}
+                                        style={style}
+                                    />
+                                </Link>
                             ]}
                         />
-                        <Link to='/settings'> <ListItem primaryText="Settings" style={style} leftIcon={<span className="fas fa-cog"></span> } /></Link>
+                        <Link to='/settings'>
+                            <ListItem
+                                primaryText="Settings"
+                                style={style}
+                                leftIcon={<span className="fas fa-cog"></span>}
+                            />
+                        </Link>
                     </List>
 
                 </SideNav>

@@ -345,6 +345,7 @@ class addEmployee extends Component {
                     console.log('response::::::::::', response);
                     if (response.status === 200) {
                         alert(`Employee created: ${response.data.name}`);
+                        console.log('props histor::::', this.props.history);
                         this.props.history.push('/view-employee');
                     }
                 })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../components/navbar-login';
-import ViewEmployee from '../components/view-employee';
+import ViewEmployee from '../components/view-employee-scroll';
 import Sidenav from '../components/sidenav';
 
 export default class extends Component {

@@ -22,7 +22,6 @@ const style = {
 class viewDealer extends Component {
 
 
-
     constructor() {
         super();
         this.state = {
@@ -39,6 +38,8 @@ class viewDealer extends Component {
         this.setState({ loading: true, dealers: [], data: [] }, () => {
             this.getEmployee();
         });
+
+        
     }
     reload() {
         window.location.reload();

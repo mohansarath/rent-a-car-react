@@ -41,7 +41,6 @@ class viewDealer extends Component {
             console.log('search:::', this.state.search);
             this.getSearchDealer();
         });
-        
     }
 
     getSearchDealer() {
@@ -51,7 +50,6 @@ class viewDealer extends Component {
                 this.setState({ data: response.data.dealer, loading: false });
             })
             .catch((error) => {
-
                 console.log('error:::::::', error);
                 this.setState({ loading: false });
             })
@@ -64,7 +62,6 @@ class viewDealer extends Component {
                 this.setState({ data: response.data.dealer, loading: false });
             })
             .catch((error) => {
-
                 console.log('error:::::::', error);
                 this.setState({ loading: false });
             })
@@ -73,7 +70,6 @@ class viewDealer extends Component {
     render() {
         if (this.state.loading)
             return (
-
                 <div style={style.container} className="margin-indicator">
                     <RefreshIndicator
                         size={150}
@@ -84,7 +80,6 @@ class viewDealer extends Component {
                         style={style.refresh}
                     />
                 </div>
-
             )
 
         return (
